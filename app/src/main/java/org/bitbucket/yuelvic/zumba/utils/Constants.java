@@ -24,6 +24,28 @@ public class Constants {
             "ADIOS"
     };
 
+    public static final String[] MWF = {
+            "CAIPIRINHA",
+            "LIMBO",
+            "CHUCUCHA",
+            "GINZA",
+            "SHAKE",
+            "SHAKE_SENORA",
+            "TOMA_REGGAETON",
+            "WINE_IT_UP"
+    };
+
+    public static final String[] TTH = {
+            "PRETHAM",
+            "BOOM BOOM MAMA",
+            "MONSTER WINER",
+            "ECHA PALLA",
+            "KUKERE",
+            "LA SUEVECITA",
+            "FIESTA BAJO EL SOL",
+            "ADIOS"
+    };
+
     public static final String CAIPIRINHA_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476077750/Caipirinha_-_Full_Dance_nj36qm.mp4";
     public static final String[] CAIPIRINHA = {
             "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476077087/Caipirinha_-_Step_1_mgdqm5.mp4",

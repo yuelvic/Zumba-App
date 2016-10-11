@@ -27,6 +27,7 @@ import org.bitbucket.yuelvic.zumba.models.VideoType;
 import org.bitbucket.yuelvic.zumba.utils.Constants;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -133,9 +134,22 @@ public class HomeActivity extends AppCompatActivity
      */
     private void initViews() {
         ArrayList<VideoType> videoTypes = new ArrayList<>();
-        for (int i = 0; i < Constants.TYPES.length; i++) {
+        String[] types = new String[0];
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        switch (day) {
+            case Calendar.MONDAY:case Calendar.WEDNESDAY:case Calendar.FRIDAY:
+                types = Constants.MWF;
+                break;
+            case Calendar.TUESDAY:case Calendar.THURSDAY:
+                types = Constants.TTH;
+                break;
+        }
+
+        for (String type : types) {
             VideoType videoType = new VideoType();
-            videoType.setName(Constants.TYPES[i]);
+            videoType.setName(type);
             videoType.setDay(Day.MWF);
             videoTypes.add(videoType);
         }
