@@ -20,7 +20,6 @@ import com.thin.downloadmanager.ThinDownloadManager;
 
 import org.bitbucket.yuelvic.zumba.R;
 import org.bitbucket.yuelvic.zumba.models.Video;
-import org.bitbucket.yuelvic.zumba.utils.Constants;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -114,7 +113,7 @@ public class HomeAdapter extends BaseAdapter {
 
                     @Override
                     public void onProgress(DownloadRequest downloadRequest, long totalBytes, long downloadedBytes, int progress) {
-
+                        
                     }
                 });
         ThinDownloadManager manager = new ThinDownloadManager();

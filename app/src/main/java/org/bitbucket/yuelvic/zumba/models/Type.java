@@ -11,5 +11,13 @@ public enum Type {
     SHAKE,
     SHAKE_SENORA,
     TOMA_REGGAETON,
-    WINE_IT_UP
+    WINE_IT_UP,
+    PRETHAM,
+    BOOM_BOOM_MAMA,
+    MONSTER_WINER,
+    ECHA_PALLA,
+    KUKERE,
+    LA_SUEVECITA,
+    FIESTA_BAJO_EL_SOL,
+    ADIOS
 }

@@ -53,7 +53,7 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.ViewHolder> {
         final VideoType videoType = videoTypes.get(position);
         holder.tvType.setText(videoType.getName());
 
-        RxView.clicks(holder.ivCover).subscribe(new Action1<Void>() {
+        RxView.clicks(holder.itemView).subscribe(new Action1<Void>() {
             @Override
             public void call(Void aVoid) {
                 Intent intent = new Intent(context, TypeActivity.class);
@@ -70,7 +70,6 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.ViewHolder> {
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.iv_cover) ImageView ivCover;
         @BindView(R.id.tv_type) TextView tvType;
         public ViewHolder(View itemView) {
             super(itemView);

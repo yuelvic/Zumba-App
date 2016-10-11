@@ -5,8 +5,6 @@ package org.bitbucket.yuelvic.zumba.utils;
  */
 public class Constants {
 
-    public static final String CLOUD_URL = "http://res.cloudinary.com/dhrba2qgs/video/upload/so_1.0/%s.jpg";
-
     public static final String[] TYPES = {
             "CAIPIRINHA",
             "LIMBO",
@@ -15,7 +13,15 @@ public class Constants {
             "SHAKE",
             "SHAKE_SENORA",
             "TOMA_REGGAETON",
-            "WINE_IT_UP"
+            "WINE_IT_UP",
+            "PRETHAM",
+            "BOOM BOOM MAMA",
+            "MONSTER WINER",
+            "ECHA PALLA",
+            "KUKERE",
+            "LA SUEVECITA",
+            "FIESTA BAJO EL SOL",
+            "ADIOS"
     };
 
     public static final String CAIPIRINHA_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476077750/Caipirinha_-_Full_Dance_nj36qm.mp4";
@@ -113,4 +119,101 @@ public class Constants {
             "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476091212/WINE_IT_UP_-_Step_7_gx3gwj.mp4",
             "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476091212/WINE_IT_UP_-_Step_8_rvnqt0.mp4"
     };
+
+    public static final String PRETHAM_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147344/Pretham_-_Full_Dance_c6le76.mp4";
+    public static final String[] PRETHAM = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147249/Pretham_-_Step_1_pfcta8.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147248/Pretham_-_Step_2_yh4pvz.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147263/Pretham_-_Step_3_xj0yet.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147255/Pretham_-_Step_4_daphsg.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147265/Pretham_-_Step_5_sgijy5.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147263/Pretham_-_Step_6_c0lfsm.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147259/Pretham_-_Step_7_rk3uk0.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476147262/Pretham_-_Step_8_mtgsd9.mp4"
+    };
+
+    public static final String BOOM_MAMA_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150255/Boom_Boom_Mama_-_Full_Dance_qkubu9.mp4";
+    public static final String[] BOOM_MAMA = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150183/Boom_boom_mama_-_Step_1_dj3vyo.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150188/Boom_boom_mama_-_Step_2_noshjy.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150207/Boom_boom_mama_-_Step_3_d955ny.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150195/Boom_boom_mama_-_Step_4_eedh8c.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150210/Boom_boom_mama_-_Step_5_hkrdou.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150202/Boom_boom_mama_-_Step_6_fdwnrm.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150205/Boom_boom_mama_-_Step_7_pyinps.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476150210/Boom_boom_mama_-_Step_8_hzhvly.mp4"
+    };
+
+    public static final String MONSTER_WINER_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476164218/Monster_Winer_-_Full_Dance_ubvxvn.mp4";
+    public static final String[] MONSTER_WINER = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168677/Monster_Winer_-_Step_1_vc2vhg.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168683/Monster_Winer_-_Step_2_criy8j.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168678/Monster_Winer_-_Step_3_nep2yq.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168681/Monster_Winer_-_Step_4_uuwzvr.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168687/Monster_Winer_-_Step_5_oembua.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168687/Monster_Winer_-_Step_6_fdrw0n.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168686/Monster_Winer_-_Step_7_yd8ln9.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476168687/Monster_Winer_-_Step_8_wqfhsp.mp4"
+    };
+
+    public static final String ECHA_PALLA_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476164142/Echa_Pa_lla_-_Full_Dance_htskm5.mp4";
+    public static final String[] ECHA_PALLA = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154139/Echa_Pa_lla_-_Step_1_vq3wys.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154168/Echa_Pa_lla_-_Step_2_oovfvu.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154153/Echa_Pa_lla_-_Step_3_gh1c3b.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154145/Echa_Pa_lla_-_Step_4_dxmi0b.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154147/Echa_Pa_lla_-_Step_5_uae39n.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154158/Echa_Pa_lla_-_Step_6_zemdro.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154155/Echa_Pa_lla_-_Step_7_a7bejs.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476154156/Echa_Pa_lla_-_Step_8_nbctvh.mp4"
+    };
+
+    public static final String KUKERE_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153983/Kukere_-_Full_Dance_h2qfur.mp4";
+    public static final String[] KUKERE = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153879/Kukere_-_Step_1_lsyjop.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153880/Kukere_-_Step_2_kqnvm9.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153894/Kukere_-_Step_3_pfnohc.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153897/Kukere_-_Step_4_u6tist.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153886/Kukere_-_Step_5_ppjhwt.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153897/Kukere_-_Step_6_znaezo.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153899/Kukere_-_Step_7_l32fbm.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476153896/Kukere_-_Step_8_o7oqxo.mp4"
+    };
+
+    public static final String LA_SUEVECITA_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155232/La_Suavecita_-_Full_Dance_vdu6cp.mp4";
+    public static final String[] LA_SUEVECITA = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155112/La_Suavecita_-_Step_1_nskctx.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155115/La_Suavecita_-_Step_2_p9fjtm.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155121/La_Suavecita_-_Step_3_hk8btx.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155123/La_Suavecita_-_Step_4_w96ysx.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155129/La_Suavecita_-_Step_5_uv8zls.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155129/La_Suavecita_-_Step_6_ccwkhe.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155126/La_Suavecita_-_Step_7_kskggv.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476155264/La_Suavecita_-_Step_8_gnemwg.mp4"
+    };
+
+    public static final String FIESTA_BAJO_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476164019/Fiesta_Bajo_el_Sol_-_Full_Dance_q2tsuo.mp4";
+    public static final String[] FIESTA_BAJO = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476163978/Fiesta_Bajo_el_Sol_-_Step_1_xes6mh.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476163987/Fiesta_Bajo_el_Sol_-_Step_2_koucfq.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476163990/Fiesta_Bajo_el_Sol_-_Step_3_umbzya.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476163994/Fiesta_Bajo_el_Sol_-_Step_4_ggsbbr.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476163989/Fiesta_Bajo_el_Sol_-_Step_5_odzzu4.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476163989/Fiesta_Bajo_el_Sol_-_Step_6_z89yvf.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476164002/Fiesta_Bajo_el_Sol_-_Step_7_azo7ug.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476163996/Fiesta_Bajo_el_Sol_-_Step_8_ilammv.mp4"
+    };
+
+    public static final String ADIOS_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162258/Adios_-_Full_Dance_usj0dd.mp4";
+    public static final String[] ADIOS = {
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162211/Adios_-_Step_1_z9jkin.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162205/Adios_-_Step_2_mopr6p.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162206/Adios_-_Step_3_ki9j5c.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162196/Adios_-_Step_4_kzdhmo.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162200/Adios_-_Step_5_dgargq.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162206/Adios_-_Step_6_cd9sgj.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162209/Adios_-_Step_7_sazwgb.mp4",
+            "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476162212/Adios_-_Step_8_vctysw.mp4"
+    };
+
 }

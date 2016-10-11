@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_parent"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/iv_cover"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/test"/>
+    android:layout_height="wrap_content"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/tv_type"
@@ -17,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/menu_button_text_size"
         android:text="VIDEO TYPE"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"/>
+        android:textSize="@dimen/menu_button_text_size"/>
 
 </RelativeLayout>
