@@ -10,6 +10,7 @@ public class VideoType implements Parcelable {
 
     private String name;
     private Day day;
+    private boolean isDownloaded;
 
     public VideoType() {
 
@@ -17,6 +18,7 @@ public class VideoType implements Parcelable {
 
     protected VideoType(Parcel in) {
         name = in.readString();
+        isDownloaded = in.readByte() != 0;
     }
 
     public static final Creator<VideoType> CREATOR = new Creator<VideoType>() {
@@ -47,6 +49,14 @@ public class VideoType implements Parcelable {
         this.day = day;
     }
 
+    public boolean isDownloaded() {
+        return isDownloaded;
+    }
+
+    public void setDownloaded(boolean downloaded) {
+        isDownloaded = downloaded;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -55,5 +65,6 @@ public class VideoType implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
+        parcel.writeByte((byte) (isDownloaded ? 1 : 0));
     }
 }

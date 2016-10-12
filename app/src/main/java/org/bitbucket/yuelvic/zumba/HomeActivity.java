@@ -1,6 +1,7 @@
 package org.bitbucket.yuelvic.zumba;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -21,11 +22,14 @@ import android.widget.Toast;
 
 import com.jakewharton.rxbinding.view.RxView;
 
+import org.bitbucket.yuelvic.zumba.adapters.OfflineAdapter;
 import org.bitbucket.yuelvic.zumba.adapters.TypeAdapter;
 import org.bitbucket.yuelvic.zumba.models.Day;
 import org.bitbucket.yuelvic.zumba.models.VideoType;
 import org.bitbucket.yuelvic.zumba.utils.Constants;
+import org.bitbucket.yuelvic.zumba.utils.FileManager;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -42,6 +46,9 @@ public class HomeActivity extends AppCompatActivity
     private TextView tvMode;
     private Switch switchMode;
     private boolean isOnline = true;
+
+    private ArrayList<VideoType> videoTypes;
+    private String[] types;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,8 +140,8 @@ public class HomeActivity extends AppCompatActivity
      * Initialize views
      */
     private void initViews() {
-        ArrayList<VideoType> videoTypes = new ArrayList<>();
-        String[] types = new String[0];
+        videoTypes = new ArrayList<>();
+        types = new String[0];
 
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_WEEK);
@@ -150,17 +157,12 @@ public class HomeActivity extends AppCompatActivity
         for (String type : types) {
             VideoType videoType = new VideoType();
             videoType.setName(type);
-            videoType.setDay(Day.MWF);
             videoTypes.add(videoType);
         }
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        TypeAdapter adapter = new TypeAdapter(getApplicationContext());
-        adapter.addItems(videoTypes);
-
         recyclerType.setLayoutManager(layoutManager);
-        recyclerType.setAdapter(adapter);
 
         switchMode.setChecked(true);
         RxView.clicks(switchMode)
@@ -182,9 +184,44 @@ public class HomeActivity extends AppCompatActivity
                 .subscribe(new Action1<Boolean>() {
                     @Override
                     public void call(Boolean flag) {
-                        Toast.makeText(getApplicationContext(), ""+flag, Toast.LENGTH_SHORT).show();
+                        if (flag) initOnline();
+                        else initOffline();
                     }
                 });
+
+        initOnline();
+    }
+
+    /**
+     * Online mode
+     */
+    private void initOnline() {
+        TypeAdapter adapter = new TypeAdapter(getApplicationContext());
+        adapter.addItems(videoTypes);
+
+        recyclerType.setAdapter(adapter);
+    }
+
+    /**
+     * Offline mode
+     */
+    private void initOffline() {
+        ArrayList<VideoType> videoTypes = new ArrayList<>();
+        OfflineAdapter adapter = new OfflineAdapter(getApplicationContext());
+
+        FileManager fileManager = new FileManager();
+        for (VideoType videoType : this.videoTypes) {
+            if (fileManager.isFilesDownloaded(new File(Environment.getExternalStorageDirectory() +
+                    "/Zumba/" + videoType.getName() + "/"))) {
+                videoType.setDownloaded(true);
+            } else {
+                videoType.setDownloaded(false);
+            }
+            videoTypes.add(videoType);
+        }
+
+        adapter.addItems(videoTypes);
+        recyclerType.setAdapter(adapter);
     }
 
 }
