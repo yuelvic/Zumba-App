@@ -35,7 +35,6 @@ public class VideoActivity extends AppCompatActivity implements OnPreparedListen
         emVideo.setOnPreparedListener(this);
         emVideo.setVideoURI(Uri.parse(video.getUrl()));
         tvTitle.setText(video.getTitle());
-        tvArtist.setText(video.getArtist());
     }
 
     @Override

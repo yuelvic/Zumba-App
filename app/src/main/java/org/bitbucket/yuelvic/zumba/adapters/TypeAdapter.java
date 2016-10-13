@@ -57,6 +57,7 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.ViewHolder> {
             public void call(Void aVoid) {
                 Intent intent = new Intent(context, TypeActivity.class);
                 intent.putExtra("type", videoType);
+                intent.putExtra("mode", "online");
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

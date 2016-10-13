@@ -13,9 +13,8 @@ import android.widget.Toast;
 import com.jakewharton.rxbinding.view.RxView;
 
 import org.bitbucket.yuelvic.zumba.R;
-import org.bitbucket.yuelvic.zumba.VideoActivity;
+import org.bitbucket.yuelvic.zumba.TypeActivity;
 import org.bitbucket.yuelvic.zumba.models.VideoType;
-import org.bitbucket.yuelvic.zumba.utils.Constants;
 import org.bitbucket.yuelvic.zumba.utils.FileManager;
 
 import java.util.ArrayList;
@@ -61,7 +60,11 @@ public class OfflineAdapter extends RecyclerView.Adapter<OfflineAdapter.ViewHold
             RxView.clicks(holder.itemView).subscribe(new Action1<Void>() {
                 @Override
                 public void call(Void aVoid) {
-                    Toast.makeText(context, "Downloaded", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, TypeActivity.class);
+                    intent.putExtra("type", videoType);
+                    intent.putExtra("mode", "offline");
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
                 }
             });
         }

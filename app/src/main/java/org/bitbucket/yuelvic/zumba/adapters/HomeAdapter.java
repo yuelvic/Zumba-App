@@ -76,53 +76,14 @@ public class HomeAdapter extends BaseAdapter {
             view.setTag(holder);
         }
         final Video video = this.videos.get(position);
-        Glide.with(this.context).load(R.drawable.test).into(holder.ivCover);
         holder.tvTitle.setText(video.getTitle());
         holder.tvArtist.setText(video.getArtist());
         holder.tvDuration.setText(String.format("%d", video.getDuration()));
 
-        RxView.clicks(holder.ivDownload).subscribe(new Action1<Void>() {
-            @Override
-            public void call(Void aVoid) {
-                downloadVideo(video.getUrl());
-            }
-        });
-
         return view;
     }
 
-    private void downloadVideo(String path) {
-        File file = new File(Environment.getExternalStorageDirectory() + "/Zumba/");
-        if (!file.exists()) file.mkdirs();
-
-        Uri downloadUri = Uri.parse(path);
-        Uri destinationUri = Uri.parse(Environment.getExternalStorageDirectory() + "/Zumba/" + System.currentTimeMillis() + ".mp4");
-        DownloadRequest request = new DownloadRequest(downloadUri)
-                .setRetryPolicy(new DefaultRetryPolicy())
-                .setDestinationURI(destinationUri)
-                .setStatusListener(new DownloadStatusListenerV1() {
-                    @Override
-                    public void onDownloadComplete(DownloadRequest downloadRequest) {
-                        Toast.makeText(context, "Download successful", Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void onDownloadFailed(DownloadRequest downloadRequest, int errorCode, String errorMessage) {
-                        Toast.makeText(context, "Failed to download video", Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void onProgress(DownloadRequest downloadRequest, long totalBytes, long downloadedBytes, int progress) {
-                        
-                    }
-                });
-        ThinDownloadManager manager = new ThinDownloadManager();
-        manager.add(request);
-    }
-
     static class ViewHolder {
-        @BindView(R.id.iv_cover) ImageView ivCover;
-        @BindView(R.id.iv_download) ImageView ivDownload;
         @BindView(R.id.tv_title) TextView tvTitle;
         @BindView(R.id.tv_artist) TextView tvArtist;
         @BindView(R.id.tv_duration) TextView tvDuration;
