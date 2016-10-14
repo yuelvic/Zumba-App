@@ -28,6 +28,7 @@ import org.bitbucket.yuelvic.zumba.models.Day;
 import org.bitbucket.yuelvic.zumba.models.VideoType;
 import org.bitbucket.yuelvic.zumba.utils.Constants;
 import org.bitbucket.yuelvic.zumba.utils.FileManager;
+import org.bitbucket.yuelvic.zumba.utils.ItemDivider;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -64,8 +65,7 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(getApplicationContext(), "Nonstop", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -127,8 +127,6 @@ public class HomeActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_fav) {
 
-        } else if (id == R.id.nav_manage) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -146,10 +144,10 @@ public class HomeActivity extends AppCompatActivity
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_WEEK);
         switch (day) {
-            case Calendar.MONDAY:case Calendar.WEDNESDAY:case Calendar.FRIDAY:
+            case Calendar.MONDAY:case Calendar.WEDNESDAY:case Calendar.FRIDAY:case Calendar.SUNDAY:
                 types = Constants.MWF;
                 break;
-            case Calendar.TUESDAY:case Calendar.THURSDAY:
+            case Calendar.TUESDAY:case Calendar.THURSDAY:case Calendar.SATURDAY:
                 types = Constants.TTH;
                 break;
         }
@@ -163,6 +161,7 @@ public class HomeActivity extends AppCompatActivity
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerType.setLayoutManager(layoutManager);
+        recyclerType.addItemDecoration(new ItemDivider(getApplicationContext()));
 
         switchMode.setChecked(true);
         RxView.clicks(switchMode)
@@ -196,7 +195,7 @@ public class HomeActivity extends AppCompatActivity
      * Online mode
      */
     private void initOnline() {
-        TypeAdapter adapter = new TypeAdapter(getApplicationContext());
+        TypeAdapter adapter = new TypeAdapter(this);
         adapter.addItems(videoTypes);
 
         recyclerType.setAdapter(adapter);
@@ -207,7 +206,7 @@ public class HomeActivity extends AppCompatActivity
      */
     private void initOffline() {
         ArrayList<VideoType> videoTypes = new ArrayList<>();
-        OfflineAdapter adapter = new OfflineAdapter(getApplicationContext());
+        OfflineAdapter adapter = new OfflineAdapter(this);
 
         FileManager fileManager = new FileManager();
         for (VideoType videoType : this.videoTypes) {

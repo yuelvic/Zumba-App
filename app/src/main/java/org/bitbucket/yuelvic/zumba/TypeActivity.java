@@ -23,6 +23,7 @@ import org.bitbucket.yuelvic.zumba.utils.FileManager;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +33,8 @@ public class TypeActivity extends AppCompatActivity implements OnPreparedListene
     @BindView(R.id.vv_video) EMVideoView emVideo;
     @BindView(R.id.list_video) ListView listVideo;
 
+    private FileManager fileManager;
+    private Intent intent;
     private String[] arrVideos;
     private String fullVideo;
     private VideoType videoType;
@@ -54,10 +57,11 @@ public class TypeActivity extends AppCompatActivity implements OnPreparedListene
         arrVideos = new String[0];
         fullVideo = null;
 
-        Intent intent = getIntent();
+        intent = getIntent();
         videoType = intent.getParcelableExtra("type");
         String mode = intent.getStringExtra("mode");
 
+        fileManager = new FileManager();
         if (mode.equals("online")) initOnline();
         else initOffline();
 
@@ -147,7 +151,7 @@ public class TypeActivity extends AppCompatActivity implements OnPreparedListene
             video.setDuration(7537128);
             videos.add(video);
         }
-        final HomeAdapter adapter = new HomeAdapter(getApplicationContext());
+        final HomeAdapter adapter = new HomeAdapter(this);
         adapter.addItems(videos);
         listVideo.setAdapter(adapter);
         listVideo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -155,6 +159,8 @@ public class TypeActivity extends AppCompatActivity implements OnPreparedListene
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
                 intent.putExtra("video", adapter.getVideo(position));
+                intent.putExtra("index", position);
+                intent.putExtra("videos", fileManager.getFilePaths(videoType.getName()));
                 startActivity(intent);
             }
         });
@@ -164,12 +170,11 @@ public class TypeActivity extends AppCompatActivity implements OnPreparedListene
      * Initialize offline
      */
     private void initOffline() {
-        fullVideo = Constants.CAIPIRINHA_FULL;
-        FileManager fileManager = new FileManager();
+        fullVideo = intent.getStringExtra("full");
         File file = new File(Environment.getExternalStorageDirectory() + "/Zumba/" + videoType.getName() + "/");
         if (file.exists() && file.listFiles().length > 0) {
-            ArrayList<File> files = fileManager.getListOfFiles(file);
-            final FileAdapter adapter = new FileAdapter(getApplicationContext());
+            final ArrayList<File> files = fileManager.getListOfFiles(file);
+            final FileAdapter adapter = new FileAdapter(this);
             adapter.addFiles(files);
             listVideo.setAdapter(adapter);
             listVideo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -181,6 +186,8 @@ public class TypeActivity extends AppCompatActivity implements OnPreparedListene
                     video.setTitle(file.getName());
                     Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
                     intent.putExtra("video", video);
+                    intent.putExtra("index", position);
+                    intent.putExtra("videos", fileManager.getOnlinePaths(files));
                     startActivity(intent);
                 }
             });

@@ -11,9 +11,9 @@ public class Constants {
             "CHUCUCHA",
             "GINZA",
             "SHAKE",
-            "SHAKE_SENORA",
-            "TOMA_REGGAETON",
-            "WINE_IT_UP",
+            "SHAKE SENORA",
+            "TOMA REGGAETON",
+            "WINE IT UP",
             "PRETHAM",
             "BOOM BOOM MAMA",
             "MONSTER WINER",
@@ -30,9 +30,9 @@ public class Constants {
             "CHUCUCHA",
             "GINZA",
             "SHAKE",
-            "SHAKE_SENORA",
-            "TOMA_REGGAETON",
-            "WINE_IT_UP"
+            "SHAKE SENORA",
+            "TOMA REGGAETON",
+            "WINE IT UP"
     };
 
     public static final String[] TTH = {
