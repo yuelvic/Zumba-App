@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:text="VIDEO TYPE"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/black"
         android:textSize="16sp"/>
 
     <ImageView
@@ -23,6 +23,6 @@
         android:layout_centerVertical="true"
         android:src="@android:drawable/stat_sys_download"
         android:visibility="gone"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/black"/>
 
 </RelativeLayout>

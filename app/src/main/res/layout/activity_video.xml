@@ -6,31 +6,8 @@
     android:layout_height="match_parent"
     tools:context="org.bitbucket.yuelvic.zumba.VideoActivity">
 
-    <com.devbrackets.android.exomedia.ui.widget.EMVideoView
-        android:id="@+id/vv_video"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        app:useDefaultControls="true"/>
-
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/vv_video">
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/tv_artist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/control_container"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,5 +28,30 @@
             android:text="NEXT"/>
 
     </LinearLayout>
+
+    <com.devbrackets.android.exomedia.ui.widget.EMVideoView
+        android:id="@+id/vv_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/control_container"
+        app:useDefaultControls="true"/>
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/vv_video">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_artist"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+    <!--</LinearLayout>-->
 
 </RelativeLayout>

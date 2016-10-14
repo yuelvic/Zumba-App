@@ -46,6 +46,25 @@ public class Constants {
             "ADIOS"
     };
 
+    public static final String[] FULL = {
+            Constants.CAIPIRINHA_FULL,
+            Constants.LIMBO_FULL,
+            Constants.CHUCUCHA_FULL,
+            Constants.GINZA_FULL,
+            Constants.SHAKE_FULL,
+            Constants.SHAKE_SENORA_FULL,
+            Constants.TOMA_REGGAETON_FULL,
+            Constants.WINE_IT_UP_FULL,
+            Constants.PRETHAM_FULL,
+            Constants.BOOM_MAMA_FULL,
+            Constants.MONSTER_WINER_FULL,
+            Constants.ECHA_PALLA_FULL,
+            Constants.KUKERE_FULL,
+            Constants.LA_SUEVECITA_FULL,
+            Constants.FIESTA_BAJO_FULL,
+            Constants.ADIOS_FULL
+    };
+
     public static final String CAIPIRINHA_FULL = "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476077750/Caipirinha_-_Full_Dance_nj36qm.mp4";
     public static final String[] CAIPIRINHA = {
             "http://res.cloudinary.com/dhrba2qgs/video/upload/v1476077087/Caipirinha_-_Step_1_mgdqm5.mp4",

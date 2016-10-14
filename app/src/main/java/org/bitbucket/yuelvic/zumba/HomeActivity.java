@@ -1,5 +1,6 @@
 package org.bitbucket.yuelvic.zumba;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
@@ -65,7 +66,9 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Nonstop", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), NonStopActivity.class);
+                intent.putExtra("videos", Constants.FULL);
+                startActivity(intent);
             }
         });
 
